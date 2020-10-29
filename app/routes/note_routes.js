@@ -1,6 +1,6 @@
 const express = require('express')
 const passport = require('passport')
-const Note = require('../models/tracker')
+const Note = require('../models/note')
 const customErrors = require('../../lib/custom_errors')
 const handle404 = customErrors.handle404
 const requireOwnership = customErrors.requireOwnership
@@ -95,7 +95,7 @@ router.delete('/note/:id', requireToken, (req, res, next) => {
 })
 
 // router.get('/show-all', (req, res, next) => {
-//   Tracker.find()
+//   Note.find()
 //     .populate('owner')
 //     .then(threads => res.status(201).json({ threads }))
 //     .catch(next)
